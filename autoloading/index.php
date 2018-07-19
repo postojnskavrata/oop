@@ -1,5 +1,11 @@
 <?php
-
+spl_autoload_register(
+    function ($className) {
+        $fileName = __DIR__.DIRECTORY_SEPARATOR.$className.".php";
+        echo $fileName;
+        require_once($fileName); 
+    }
+);
 use Human\Human as Human;
 use Human\Leg;
 
